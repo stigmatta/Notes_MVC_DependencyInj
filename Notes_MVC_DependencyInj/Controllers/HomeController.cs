@@ -34,6 +34,8 @@ public class HomeController : Controller
                 .Where(tag => !string.IsNullOrEmpty(tag)));
         }
 
+        note.CreatedAt = DateTime.Now;
+
         _saver.Save(note);
         return RedirectToAction("Index");
     }

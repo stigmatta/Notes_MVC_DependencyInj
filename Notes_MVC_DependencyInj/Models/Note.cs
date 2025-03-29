@@ -4,7 +4,6 @@ namespace Notes_MVC_DependencyInj.Models
 {
     public class Note
     {
-        public int Id { get; set; }
         [Required]
         public string Title { get; set; } = null!;
         [Required]

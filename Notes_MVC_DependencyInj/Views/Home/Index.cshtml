@@ -7,13 +7,15 @@
 <h4>Existing Notes</h4>
 @if (ViewBag.Notes != null && ViewBag.Notes.Count > 0)
 {
-    <ul class="list-group">
+    <ul style="width:fit-content;" class="list-group">
         @foreach (var note in ViewBag.Notes)
         {
-            <li class="list-group-item">
-                <strong>@note.Title</strong> - @note.Text
-                <br />
+            <li style="display:flex;flex-direction:column" class="list-group-item">
+                <div>
+                    <strong>@note.Title</strong> - @note.Text
+                </div>
                 <small>Tags: @(note.Tags != null ? string.Join(", ", note.Tags) : "No tags")</small>
+                <small style="margin-top:1em">@note.CreatedAt</small>
             </li>
         }
     </ul>
